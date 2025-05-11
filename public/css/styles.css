@@ -1,6 +1,64 @@
 /******* Change Box Model ***************/
+:root {
+  --paragraph-color: #00296B;
+  --heading-color: #003F88;
+  --lighter-blue: #00509D;
+}
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+body {
+  background-image: url('/images/site/small_check.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+h1, h2 {
+  font-family: Verdana, sans-serif;
+  color: var(--heading-color);
+}
+
+p, li, figcaption, a {
+  font-family: Tahoma, sans-serif;
+  color: var(--paragraph-color);
+}
+
+a {
+  color: revert;
+}
+
+#wrapper {
+  margin: 1.5rem auto;
+  max-width: 2000px;
+  width: 90%;
+  background: #f3f3f3;
+  border-radius: 50px;
+}
+
+#top-header {
+  margin: 0;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+#top-header a {
+  text-decoration: none;
+}
+
+.siteName a {
+  font-size: clamp(50px, 2vw, 100px);
+  color: var(--paragraph-color);
+}
+
+.siteName a:hover, #tools a:hover {color: var(--lighter-blue);}
+
+#tools a {
+  font-size: 20px;
+  color: var(--paragraph-color);
 }
