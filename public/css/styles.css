@@ -1,8 +1,11 @@
 /******* Change Box Model ***************/
 :root {
-  --paragraph-color: #00296B;
-  --heading-color: #003F88;
-  --lighter-blue: #00509D;
+  --dark-blue: #00296B;
+  --blue: #003F88;
+  --gray: #212529;
+  --white: #f3f3f3;
+  --heading-font: Verdana, sans-serif;
+  --paragraph-font: Tahoma, sans-serif;
 }
 
 *,
@@ -18,30 +21,31 @@ body {
   background-repeat: no-repeat;
 }
 
+h1 {
+  padding-left: 2rem;
+  font-size: clamp(20pt, 2vw, 35pt);
+}
+
 h1, h2 {
-  font-family: Verdana, sans-serif;
-  color: var(--heading-color);
+  font-family: var(--heading-font);
+  color: var(--blue);
 }
 
-p, li, figcaption, a {
-  font-family: Tahoma, sans-serif;
-  color: var(--paragraph-color);
-}
-
-a {
-  color: revert;
+p, li, figcaption, a, button {
+  font-family: var(--paragraph-font);
+  color: var(--dark-blue);
 }
 
 #wrapper {
   margin: 1.5rem auto;
   max-width: 2000px;
   width: 90%;
-  background: #f3f3f3;
-  border-radius: 50px;
+  background: var(--white);
+  border-radius: 8px;
+  border: 8px solid var(--blue);
 }
 
 #top-header {
-  margin: 0;
   padding: 2em;
   display: flex;
   justify-content: space-between;
@@ -52,13 +56,165 @@ a {
 }
 
 .siteName a {
-  font-size: clamp(50px, 2vw, 100px);
-  color: var(--paragraph-color);
+  font-size: clamp(30pt, calc(2vw + 5pt), 50pt);
+  color: var(--dark-blue);
 }
-
-.siteName a:hover, #tools a:hover {color: var(--lighter-blue);}
 
 #tools a {
   font-size: 20px;
-  color: var(--paragraph-color);
+  color: var(--dark-blue);
+}
+
+.siteName a:hover, #tools a:hover {color: var(--blue);}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  background-color: var(--gray);
+  padding: 1rem;
+  width: 99%;
+  margin: auto;
+}
+
+nav li {
+  color: #f3f3f3;
+  font-size: clamp(12pt, 1vw, 18pt);
+}
+
+nav li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#hero-image {
+  width: 100%;
+  height: clamp(500px, calc(100px + 30vw), 800px);
+  object-fit: cover;
+  border-top: 3px solid var(--gray);
+  border-bottom: 3px solid var(--gray);
+}
+
+#hero-content {position: relative;}
+
+#hero-content div {
+  position: absolute;
+  top: clamp(30px, 4vw, 100px);
+  left: clamp(30px, 4vw, 100px);
+  background-color: #00296bbe;
+  padding: 0 clamp(1rem, 4vw, 5rem) clamp(1rem, 2vw, 2rem) clamp(2rem, 1vw, 5rem);
+}
+
+#hero-content h2, #hero-content p {
+  margin-bottom: clamp(5px, 2vw, 20px);
+  color: var(--white);
+}
+
+#hero-content h2 {
+  font-size: clamp(15pt, 2vw, 25pt);
+}
+
+#hero-content p {
+  font-size: clamp(12pt, 1.5vw, 17pt);
+}
+
+button {
+  width: clamp(250px, 10vw, 500px);
+  height: clamp(25px, 2vw, 50px);
+  border-radius: 8px;
+  border: 2px solid var(--white);
+  background: var(--dark-blue);
+  color: var(--white);
+  margin-top: 20px;
+  font-size: clamp(10pt, 1vw, 15pt);
+}
+
+button:hover {
+  background: var(--blue);
+  cursor: pointer;
+}
+
+#flex-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+#flex-container > div {
+  width: 45%;
+}
+
+#upgrades {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+figure div {
+  width: 100%;
+  margin: auto;
+  height: 125px;
+  background-color: var(--dark-blue);
+}
+
+figure img {
+  height: 100px;
+  position: relative;
+  top: 10px;
+}
+
+#flex-container ul {
+  position: relative;
+  right: 20px;
+}
+
+#flex-container li {
+  font-size: clamp(16px, 1vw, 23px);
+  line-height: 50px;
+}
+
+footer {padding: 0 1rem;}
+
+@media screen and (width <= 640px) {
+  #wrapper {
+    width: revert;
+    margin: revert;
+    border: none;
+    border-radius: revert;
+  }
+
+  #top-header, #flex-container {
+    padding-right: 1rem;
+  }
+
+  #top-header, h1, #hero-content div, #flex-container {
+    padding-left: 1rem;
+  }
+
+  body {
+    margin: 0;
+    background-image: revert;
+    background: var(--white);
+  }
+
+  #hero-content div {
+    top: 10px;
+    left: 10px;
+  }
+
+  #flex-container {
+    flex-direction: column;
+  }
+
+  #flex-container > div {
+    width: revert;
+  }
 }
