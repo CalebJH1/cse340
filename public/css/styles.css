@@ -14,16 +14,9 @@
   box-sizing: border-box;
 }
 
-body {
-  background-image: url('/images/site/small_check.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
 h1 {
-  padding-left: 2rem;
-  font-size: clamp(20pt, 2vw, 35pt);
+  padding-left: 1rem;
+  font-size: 20pt;
 }
 
 h1, h2 {
@@ -36,32 +29,23 @@ p, li, figcaption, a, button {
   color: var(--dark-blue);
 }
 
-#wrapper {
-  margin: 1.5rem auto;
-  max-width: 2000px;
-  width: 90%;
-  background: var(--white);
-  border-radius: 8px;
-  border: 8px solid var(--blue);
-}
+#wrapper {background: var(--white);}
 
 #top-header {
-  padding: 2em;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
 }
 
-#top-header a {
-  text-decoration: none;
-}
+#top-header a {text-decoration: none;}
 
 .siteName a {
-  font-size: clamp(30pt, calc(2vw + 5pt), 50pt);
+  font-size: 30pt;
   color: var(--dark-blue);
 }
 
 #tools a {
-  font-size: 20px;
+  font-size: 16pt;
   color: var(--dark-blue);
 }
 
@@ -70,7 +54,7 @@ p, li, figcaption, a, button {
 nav ul {
   display: flex;
   list-style: none;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background-color: var(--gray);
   padding: 1rem;
   width: 99%;
@@ -79,7 +63,7 @@ nav ul {
 
 nav li {
   color: #f3f3f3;
-  font-size: clamp(12pt, 1vw, 18pt);
+  font-size: 12pt;
 }
 
 nav li:hover {
@@ -89,7 +73,7 @@ nav li:hover {
 
 #hero-image {
   width: 100%;
-  height: clamp(500px, calc(100px + 30vw), 800px);
+  height: 500px;
   object-fit: cover;
   border-top: 3px solid var(--gray);
   border-bottom: 3px solid var(--gray);
@@ -99,34 +83,30 @@ nav li:hover {
 
 #hero-content div {
   position: absolute;
-  top: clamp(30px, 4vw, 100px);
-  left: clamp(30px, 4vw, 100px);
+  top: 10px;
+  left: 10px;
   background-color: #00296bbe;
-  padding: 0 clamp(1rem, 4vw, 5rem) clamp(1rem, 2vw, 2rem) clamp(2rem, 1vw, 5rem);
+  padding: 0 .5rem .5rem .5rem;
 }
 
 #hero-content h2, #hero-content p {
-  margin-bottom: clamp(5px, 2vw, 20px);
+  margin-bottom: 5px;
   color: var(--white);
 }
 
-#hero-content h2 {
-  font-size: clamp(15pt, 2vw, 25pt);
-}
+#hero-content h2 {font-size: 15pt;}
 
-#hero-content p {
-  font-size: clamp(12pt, 1.5vw, 17pt);
-}
+#hero-content p {font-size: 12pt;}
 
 button {
-  width: clamp(250px, 10vw, 500px);
-  height: clamp(25px, 2vw, 50px);
+  width: 250px;
+  height: 25px;
   border-radius: 8px;
   border: 2px solid var(--white);
   background: var(--dark-blue);
   color: var(--white);
   margin-top: 20px;
-  font-size: clamp(10pt, 1vw, 15pt);
+  font-size: 10pt;
 }
 
 button:hover {
@@ -134,15 +114,9 @@ button:hover {
   cursor: pointer;
 }
 
-#flex-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 2rem;
-}
+#flex-container {padding: 1rem;}
 
-#flex-container > div {
-  width: 45%;
-}
+#flex-container > div {width: 99%;}
 
 #upgrades {
   display: grid;
@@ -177,44 +151,66 @@ figure img {
 }
 
 #flex-container li {
-  font-size: clamp(16px, 1vw, 23px);
+  font-size: 10pt;
   line-height: 50px;
 }
 
 footer {padding: 0 1rem;}
 
-@media screen and (width <= 640px) {
-  #wrapper {
-    width: revert;
-    margin: revert;
-    border: none;
-    border-radius: revert;
-  }
-
-  #top-header, #flex-container {
-    padding-right: 1rem;
-  }
-
-  #top-header, h1, #hero-content div, #flex-container {
-    padding-left: 1rem;
-  }
-
+@media screen and (width > 640px) {
   body {
-    margin: 0;
-    background-image: revert;
-    background: var(--white);
+    background-image: url('/images/site/small_check.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
+
+  h1 {font-size: 28pt;}
+
+  #wrapper {
+    margin: 1.5rem auto;
+    max-width: 2000px;
+    width: 90%;
+    border-radius: 8px;
+    border: 8px solid var(--blue);
+  }
+
+  .siteName a {font-size: 50pt;}
+
+  #tools a {font-size: 20pt;}
+
+  nav li {font-size: 18pt;}
+
+  #hero-image {height: clamp(500px, calc(100px + 30vw), 800px);}
 
   #hero-content div {
-    top: 10px;
-    left: 10px;
+    top: clamp(30px, 4vw, 100px);
+    left: clamp(30px, 4vw, 100px);
+    padding: 0 clamp(1rem, 4vw, 5rem) clamp(1rem, 2vw, 2rem) clamp(2rem, 1vw, 5rem);
+  }
+
+  #hero-content h2, #hero-content p {margin-bottom: 20px;}
+
+  #hero-content h2 {font-size: 25pt;}
+
+  #hero-content p {font-size: 17pt;}
+
+  button {
+    width: clamp(250px, 10vw, 500px);
+    height: clamp(25px, 2vw, 50px);
+    font-size: clamp(10pt, 1vw, 15pt);
   }
 
   #flex-container {
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
   }
 
   #flex-container > div {
-    width: revert;
+    width: 49%;
+    max-width: 700px;
   }
+
+  #flex-container li {font-size: 16pt;}
 }
