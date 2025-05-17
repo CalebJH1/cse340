@@ -20,3 +20,7 @@ README.md
 
 # ignore lock yaml file
 pnpm-lock.yaml
+
+render.com.session.sql
+
+settings.json
