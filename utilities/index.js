@@ -58,7 +58,7 @@ Util.buildClassificationGrid = async function(data){
 }
 
 /* **************************************
-* Build the details view HTML
+* Build the detail view HTML
 * ************************************ */
 Util.buildDetailsPage = async function(data){
   let details = '<div id="vehicle-details">'
