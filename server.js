@@ -29,6 +29,8 @@ app.use(static)
 app.get("/", utilities.handleErrors(baseController.buildHome))
 // Inventory routes
 app.use("/inv", inventoryRoute)
+// Error route
+app.get("/error", utilities.handleErrors(baseController.errorFunction))
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
