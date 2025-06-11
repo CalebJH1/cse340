@@ -26,7 +26,7 @@ h1, h2 {margin-left: .2rem;}
 
 p {margin-left: .5rem;}
 
-p, li, figcaption, a, button {
+p, li, figcaption, a, button, label {
   font-family: var(--paragraph-font);
   color: var(--dark-blue);
 }
@@ -58,8 +58,19 @@ body {margin: 0;}
 
 .siteName a:hover, #tools a:hover {color: var(--blue);}
 
+#navButton {
+  width: revert;
+  font-size: .8em;
+  text-align: right;
+}
+
+nav {display: none;}
+
+nav.show {display: block;}
+
 nav ul {
   display: flex;
+  flex-direction: column;
   list-style: none;
   justify-content: space-around;
   background-color: var(--gray);
@@ -69,6 +80,7 @@ nav ul {
 }
 
 nav li {
+  margin: .5em auto;
   color: #f3f3f3;
   font-size: 12pt;
 }
@@ -215,6 +227,58 @@ figure img {
 
 #vehicle-details span {font-weight: bold;}
 
+.notice li {
+  list-style: none;
+  color: red;
+  position: relative;
+  right: 30px;
+}
+
+#messages .notice li {color: black;}
+
+.management-options a {
+  display: block;
+  margin-left: 1em;
+  margin-top: .5em;
+}
+
+form {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  padding: .5em;
+  background-color: var(--dark-blue);
+}
+
+fieldset {
+  border: 1.5px solid var(--white);
+  padding: .5em;
+}
+
+form label {
+  color: var(--white);
+}
+
+form input, form select, form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 2em;
+  padding: .5em;
+}
+
+form input[type="submit"] {
+  background-color: var(--gray);
+  border: 2px solid var(--white);
+  border-radius: 12px;
+  color: var(--white);
+  margin-bottom: revert;
+}
+
+form .note {
+  position: relative;
+  bottom: 28px;
+}
+
 footer {padding: 3rem .2rem 1rem;}
 
 footer p {margin-left: revert;}
@@ -248,7 +312,19 @@ footer p {margin-left: revert;}
 
   #tools a {font-size: 20pt;}
 
-  nav li {font-size: 18pt;}
+  #navButton {display: none;}
+
+  nav {display: block;}
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  nav li {
+    font-size: 18pt;
+    margin: .5em .2em;
+  }
 
   nav a:hover {
     color: var(--gray);
@@ -306,6 +382,15 @@ footer p {margin-left: revert;}
     max-width: 1800px;
     margin: auto;
   }
+
+  form {padding: 2em;}
+
+  fieldset {
+    border: 3px solid var(--white);
+    padding: 2em;
+  }
+
+  form input[type="submit"]:hover {cursor: pointer;}
 }
 
 
